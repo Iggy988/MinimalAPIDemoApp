@@ -3,7 +3,7 @@ using DataAccess.Models;
 
 
 namespace DataAccess.Data;
-public class UserData
+public class UserData : IUserData
 {
     private readonly ISqlDataAccess _db;
     public UserData(ISqlDataAccess db)
@@ -24,5 +24,5 @@ public class UserData
 
     public Task UpdateUser(UserModel user) => _db.SaveData("dbo.spUser_Update", user);
 
-    public Task DeleteUser(int id) => _db.SaveData("dbo.spUser_Delete", new {Id = id});
+    public Task DeleteUser(int id) => _db.SaveData("dbo.spUser_Delete", new { Id = id });
 }
