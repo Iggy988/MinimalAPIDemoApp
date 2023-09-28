@@ -13,7 +13,7 @@ public class SqlDataAccess : ISqlDataAccess
     {
         _config = config;
     }
-
+    //Dapper to talk to SqlDb
     public async Task<IEnumerable<T>> LoadData<T, U>(string storedProcedure, U parameters, string connectionId = "Default")
     {
         //Dapper
